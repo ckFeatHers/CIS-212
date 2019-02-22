@@ -108,6 +108,37 @@ h5 {
 .webdes {background-color: #ff6;
 }
 
+.ofnone {
+	display: none;
+	background-color: linen;
+}
+
+.ofshow {
+	display: in-line;
+	background-color: aliceblue
+}
+ 
+#ofBody {
+	display: none;
+}
+
+ #ofHeart {
+	display: none;
+}
+
+ #ofMind {
+	display: none
+}
+
+ #ofSoul {
+ display: none;
+ }
+ 
+ #ofCreate {
+ }
+
+ 
+
 div #forfoot {
 	background-color: aliceblue;
 		color: #000475;
