@@ -40,22 +40,22 @@ much as possible from others around me and maybe someday I will be able to be of
 <ul><h3>Life as a Journey</h3><br>
 <p class="center-quote">Lots of things I have interest in push me along!</p>
 <li><h5 class="core">Of Body:</h5>
-	<p>My exercise of choice is Tennis.  Doubles tennis is my favorite 
+	<p class="ofnone" id= "ofbody">My exercise of choice is Tennis.  Doubles tennis is my favorite 
 	because the partners encourage each other, the focus is on the team effort, and areas of weakness are 
-	balanced by others strengths. </p></li>
+	balanced by others strengths.</p></li>
 <li><h5 class="prog">Of Heart:</h5>
-	<p>Compassion for others is a driving force for me. I volunteer monthly at an organization called 
+	<p class="ofnone" id="ofheart">Compassion for others is a driving force for me. I volunteer monthly at an organization called 
 	<a href="https://myheartlinks.com/groups/" target="_blank">Heartlinks</a>.
 	Their Grief Group is an age appropriate meeting of children who have lost loved ones.</p></li>
 <li><h5 class="data">Of Mind:</h5>
-	<p>My life is a constant exploration of my environment. One interest leads to another.  My interest in writing children's 
+	<p class="ofnone" id="ofmind">My life is a constant exploration of my environment. One interest leads to another.  My interest in writing children's 
 	books lead me to Web Development, which <span>SWIC</span> has been played a big part.</p></li>
 <li><h5 class="webdes">Of Soul:</h5>
-	<p>When learning one's way in life, it helps if you know where you are going.  By using Spiritual Direction, I try to focus my time 
+	<p class="ofnone" id="ofsoul">When learning one's way in life, it helps if you know where you are going.  By using Spiritual Direction, I try to focus my time 
 	and talents to the places I feel most impactful. <a href="https://www.cgsusa.org/">Catechesis of the Good Shepherd</a> helps me teach young kinds to do this 
 	at an early age.</p></li> 
 <li><h5 class="webdev">Of Creation</h5>
-	<p>Currently, I am using my natural skills and learned talents to create.  I am making a website for a new Catholic
+	<p class="ofnone" id="ofcreate">Currently, I am using my natural skills and learned talents to create.  I am making a website for a new Catholic
 	Montessori school that uses Catechesis of the Good Shepherd program as their spiritual education. 
 	<a href="https://stlcms.org/">STL Catholic Montessori</a></p></li>
 </ul>
@@ -67,13 +67,39 @@ much as possible from others around me and maybe someday I will be able to be of
 <script>
 $(document).ready(function() {
 
-<!-- Assignment #3 change color of SWIC in span tag using click handler and jquery 
+<!-- Assignment #3 change color of SWIC in span's using click handler and jquery 
 	alert("Document READY");
 	$("span").click(function() {
 	let swicTrack = document.getElementsByTagName("span");
 	for (var i=0; i < swicTrack.length; i++){ 
 			swicTrack[i].style.color = 'red';};
 		});	
+		
+<!-- Adding = click to expose li p for each class. Possibley click on x to close?)
+	
+	$("h5.core").click(function() {
+	$("p#ofbody").removeClass("ofnone").addClass("ofshow");	
+	});
+	
+	$("h5.prog").click(function() {
+	$("p#ofheart").removeClass("ofnone").addClass("ofshow");	
+	});
+	
+	$("h5.data").click(function() {
+	$("p#ofmind").removeClass("ofnone").addClass("ofshow");	
+	});
+	
+	$("h5.webdes").click(function() {
+	$("p#ofsoul").removeClass("ofnone").addClass("ofshow");	
+	});
+	
+	$("h5.webdev").click(function() {
+	alert("CLICK functional for webdev toggleClass");
+	$("p#ofcreate").toggleClass("ofshow");	
+	});
+	
+
+		
 	});				
 </script>
 
