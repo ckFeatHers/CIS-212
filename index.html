@@ -70,78 +70,85 @@ much as possible from others around me and maybe someday I will be able to be of
 <!-- <script src="/js/jquery.js"></script>
 <script src="ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
 -->
-<script src= "https://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="main.js"></script>
 <script>
 $(document).ready(function() {
 
 <!-- Assignment #4A change color of SWIC in individual span tag using click handler and jquery 
 	$("span").click(function() {
-		
+	<!--		
 		let spanNum = $(this).attr("id");
-
+	<!--
 		if (spanNum == "1") {
 			$("#1")[0].style.color = 'red';
 		} else if (spanNum == "2") {
 			$("#2")[0].style.color = 'green';			
 		} else {
-			$("span#3")[0].style.color = 'magenta';
+			$("#3")[0].style.color = 'magenta';
 		}		
-	<!-- /assign 4A
-	
+	<!-- /assign 4A	
 	});
 	
 <!-- Assignment #4B add button id nameToggle call function ToggleName	let ToggleName = 
+	<!-- NEED THIS to access button
+		$("li:first h5").click(function() {
+			$("p#ofbody").toggle("ofshow");
+			$("button#hw4C").toggle("ofshow");
+			$("li:first ol").toggle("ofshow");
+		});	
 	
-<!-- this works::	
-<!-- $("#nameToggle").click(function(ToggleName) {$("h1").toggle("ofnone");	});
-<!-- this works::
-<!--	$("#nameToggle").click(function(event){
-<!--	event.preventDefault();
+	$("button#nameToggle").on("click", ToggleName);
+	<!-- /assign 4B
+	
+<!-- 4B this works too	
+<!--
+<!--	$("#nameToggle").click(function(ToggleName){
+<!--	ToggleName.preventDefault();
 <!--	$("h1").toggle("ofnone");
-<!--	});
-<!-- this works::	
-	$("#nameToggle").click(function(ToggleName){
-	ToggleName.preventDefault();
-	$("h1").toggle("ofnone");
-	});
+<!--	});	
+	
+	
+<!-- Assignment #4C add button id getHobbies Open JSON and edit to list of hobbies	$("button#hw4C").on("click", getHobbies());
+	
+	<!-- 4C ::
+	<!-- functioning button:
+	$("button#hw4C").on("click", getHobbies);
+	
+	<!-- create object w/json
+	
+	<!-- iterate over obj and assign to created tags
+		
 
-<!-- /assign 4B
-
-
-
-
-<!-- Assignment #4C add button id getHobbies Open JSON and edit to list of hobbies	
-
+	<!-- & publish to DOM
 
 <!-- /assign 4C
- 
-<!-- assignment #3 extra 
-	
-	$("li:first h5").click(function() {
-		$("p#ofbody").toggle("ofshow");
-		$("button#hw4C").toggle("ofshow");
-		$("li:first ol").toggle("ofshow");
-	});
 
+ <!-- assignment #3 extra  
+	
+	
 	$("h5.prog").click(function() {
 		$("p#ofheart").toggle("ofshow");	
-	});
-	
+	});	
 	$("h5.data").click(function() {
-		$("p#ofmind").toggle("ofshow");	
+		$("p#ofmind").toggle("ofshow").css("background-color","aliceblue").css("color","purple");	
 <!-- why doesnt this work?	
 <!--    $("h5.data:parent p").toggle("ofshow");	
-	});
-	
+	});	
 	$("h5.webdes").click(function() {
-		$("p#ofsoul").toggle("ofshow");	
-	});
-	
+		$("p#ofsoul").toggle("ofshow");
+<!--		$("h5.webdes").css("background-color","#e7efaf");
+		<!-- could not return to original color;
+<!--		if ($("h5.webdes").css("background-color","yellow"))
+<!--		{
+<!--		$("h5.webdes").css("background-color","#e7efaf");}
+<!--		else {
+<!--		$("h5.webdes").css("background-color","yellow");
+<!--		}
+	});	
 	$("h5.webdev").click(function() {
 		$("p#ofcreate").toggle("ofshow");	
 	});
-	
-
 		
 });	<!-- end of doc ready
 </script>
