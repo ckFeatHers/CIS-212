@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head><title>SWIC Student :: CFeathers</title>
 <meta charset="utf-8">
@@ -8,21 +8,23 @@
 <header>
 </header>
 <body>
+<div id="h1div">
 <h1>Charlotte Feathers</h1>
-
+</div>
 <div class="active">
-<h3>CIS 212 Spring 19 HW#3</h3>
+<button class="hw4B" id="nameToggle">Name</button>
+<h3>CIS 212 Spring 19 HW#4</h3>
 </div>
 
 <div id="about">
 <h3>About Me</h3>
 <p>The learning never stops for me.  Life is a 
 constant exploration of what I am capable of and what life challenges have to offer. 
-Getting a degree at <span><strong>SWIC</strong></span> has been a challenge at times but the options 
+Getting a degree at <span id="1" ><strong>SWIC</strong></span> has been a challenge at times but the options 
 it has opened for me will allow me to grow as a person and continue on my way.</p>
 <p>Success to me is becoming self sufficient, productive, and faithful to my purpose in life.  
 There are several people in society who have shown this success against overwhelming odds.  They all have 
-taught me something about perseverance. That has been what I've applied here at <span><strong>SWIC</strong></span>.
+taught me something about perseverance. That has been what I've applied here at <span id="2"><strong>SWIC</strong></span>.
 </p>
 <p>My current goal is leading to employment.  ​Ideally, this will be in a junior programmer's capacity, testing software, or working with an 
 experienced Web Master. I hope one day to pursue teaching these skills to others or possibly 
@@ -36,26 +38,31 @@ much as possible from others around me and maybe someday I will be able to be of
 </div>
 
 <div class="active">
-<br>
-<ul><h3>Life as a Journey</h3><br>
-<p class="center-quote">Lots of things I have interest in push me along!</p>
+<br><h3>Life as a Journey</h3><br>
+<p style="text-align:center;">The main areas of interest in this journey are expanded here!</p>
+<ul>
 <li><h5 class="core">Of Body:</h5>
-	<p>My exercise of choice is Tennis.  Doubles tennis is my favorite 
-	because the partners encourage each other, the focus is on the team effort, and areas of weakness are 
-	balanced by others strengths. </p></li>
+	<p class="ofnone" id="ofbody">
+	I exercise because I know its good for me, however it is a struggle to motivate myself for things like treadmills. 
+	I much prefer the sports focused on team efforts. 
+	</p><button class="ofnone" id="hw4C">Show all!</button>
+	<ol class="ofnone">
+	<!-- hw4C add JSON-->
+	</ol>
+	</li>
 <li><h5 class="prog">Of Heart:</h5>
-	<p>Compassion for others is a driving force for me. I volunteer monthly at an organization called 
+	<p class="ofnone" id="ofheart">Compassion for others is a driving force for me. I volunteer monthly at an organization called 
 	<a href="https://myheartlinks.com/groups/" target="_blank">Heartlinks</a>.
 	Their Grief Group is an age appropriate meeting of children who have lost loved ones.</p></li>
 <li><h5 class="data">Of Mind:</h5>
-	<p>My life is a constant exploration of my environment. One interest leads to another.  My interest in writing children's 
-	books lead me to Web Development, which <span>SWIC</span> has been played a big part.</p></li>
+	<p class="ofnone" id="ofmind">My life is a constant exploration of my environment. One interest leads to another.  My interest in writing children's 
+	books lead me to Web Development, which <span id="3"><strong>SWIC</strong></span> has been played a big part.</p></li>
 <li><h5 class="webdes">Of Soul:</h5>
-	<p>When learning one's way in life, it helps if you know where you are going.  By using Spiritual Direction, I try to focus my time 
+	<p class="ofnone" id="ofsoul">When learning one's way in life, it helps if you know where you are going.  By using Spiritual Direction, I try to focus my time 
 	and talents to the places I feel most impactful. <a href="https://www.cgsusa.org/">Catechesis of the Good Shepherd</a> helps me teach young kinds to do this 
 	at an early age.</p></li> 
 <li><h5 class="webdev">Of Creation</h5>
-	<p>Currently, I am using my natural skills and learned talents to create.  I am making a website for a new Catholic
+	<p class="ofnone" id="ofcreate">Currently, I am using my natural skills and learned talents to create.  I am making a website for a new Catholic
 	Montessori school that uses Catechesis of the Good Shepherd program as their spiritual education. 
 	<a href="https://stlcms.org/">STL Catholic Montessori</a></p></li>
 </ul>
@@ -67,23 +74,86 @@ much as possible from others around me and maybe someday I will be able to be of
 <script>
 $(document).ready(function() {
 
-<!-- Assignment #3 change color of SWIC in span tag using click handler and jquery 
-	alert("Document READY");
+<!-- Assignment #4A change color of SWIC in individual span tag using click handler and jquery 
 	$("span").click(function() {
-	let swicTrack = document.getElementsByTagName("span");
-	for (var i=0; i < swicTrack.length; i++){ 
-			swicTrack[i].style.color = 'red';};
-		});	
-	});				
-</script>
+		
+		let spanNum = $(this).attr("id");
 
+		if (spanNum == "1") {
+			$("#1")[0].style.color = 'red';
+		} else if (spanNum == "2") {
+			$("#2")[0].style.color = 'green';			
+		} else {
+			$("span#3")[0].style.color = 'magenta';
+		}		
+	<!-- /assign 4A
+	
+	});
+	
+<!-- Assignment #4B add button id nameToggle call function ToggleName	let ToggleName = 
+	
+<!-- this works::	
+<!-- $("#nameToggle").click(function(ToggleName) {$("h1").toggle("ofnone");	});
+<!-- this works::
+<!--	$("#nameToggle").click(function(event){
+<!--	event.preventDefault();
+<!--	$("h1").toggle("ofnone");
+<!--	});
+<!-- this works::	
+	$("#nameToggle").click(function(ToggleName){
+	ToggleName.preventDefault();
+	$("h1").toggle("ofnone");
+	});
+
+<!-- /assign 4B
+
+
+
+
+<!-- Assignment #4C add button id getHobbies Open JSON and edit to list of hobbies	
+
+
+<!-- /assign 4C
+ 
+<!-- assignment #3 extra 
+	
+	$("li:first h5").click(function() {
+		$("p#ofbody").toggle("ofshow");
+		$("button#hw4C").toggle("ofshow");
+		$("li:first ol").toggle("ofshow");
+	});
+
+	$("h5.prog").click(function() {
+		$("p#ofheart").toggle("ofshow");	
+	});
+	
+	$("h5.data").click(function() {
+		$("p#ofmind").toggle("ofshow");	
+<!-- why doesnt this work?	
+<!--    $("h5.data:parent p").toggle("ofshow");	
+	});
+	
+	$("h5.webdes").click(function() {
+		$("p#ofsoul").toggle("ofshow");	
+	});
+	
+	$("h5.webdev").click(function() {
+		$("p#ofcreate").toggle("ofshow");	
+	});
+	
+
+		
+});	<!-- end of doc ready
+</script>
 </body>
+
 <div id="forfoot">
 <footer >
-Copyright &copy; 2019 <span>SWIC</span> Assignment . All rights reserved. eMail: 
+Copyright &copy; 2019 <strong>SWIC</strong> Assignment. All rights reserved. eMail: 
 <a id="foot" href="mailto:charlotte.feathers@student.swic.edu">explore@student.swic.edu</a><br>
 Designed by Bright Feathers<br>
 </footer>
 </div> 
+
 </div><!-- end/wrapper -->
 </html>
