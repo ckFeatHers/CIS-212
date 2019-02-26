@@ -1,5 +1,8 @@
+mySports = 
 {
-  "one": "Doubles Tennis",
-  "two": "Pickle Ball",
-  "three": "Dancing"
-}
+  one: "Doubles Tennis",
+  two: "Pickle Ball",
+  three: "Dancing"
+};
+myJSON = JSON.stringify(mySports);
+localStorage.setItem("testJSON", myJSON);

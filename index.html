@@ -46,9 +46,9 @@ much as possible from others around me and maybe someday I will be able to be of
 	I exercise because I know its good for me, however it is a struggle to motivate myself for things like treadmills. 
 	I much prefer the sports focused on team efforts. 
 	</p><button class="ofnone" id="hw4C">Show all!</button>
-	<ol class="ofnone">
+	<ul id="hob" class="ofnone">
 	<!-- hw4C add JSON-->
-	</ol>
+	</ul>
 	</li>
 <li><h5 class="prog">Of Heart:</h5>
 	<p class="ofnone" id="ofheart">Compassion for others is a driving force for me. I volunteer monthly at an organization called 
@@ -72,10 +72,14 @@ much as possible from others around me and maybe someday I will be able to be of
 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="main.js"></script>
-<script>
-
-function TextColorChange() {	
-alert("use element?");
+<script src="hobbies.json">
+function getHob() {
+	alert("button accessed");
+	
+text = localStorage.getItem("testJSON");
+Sports = JSON.parse(text);
+document.getElementById("hob").innerHTML = Sports.one;
+	
 }
 </script>
 <script>
@@ -89,12 +93,12 @@ $(document).ready(function() {
 	
 	let e = $(this).attr("id");	
 	
-	if (e == "1") {
-			$("#1")[0].style.color = 'red';
+	if (e == "1") {			
+			TextColorChange("#1", 'red');
 		} else if (e == "2") {
-			$("#2")[0].style.color = 'green';			
+			TextColorChange("#2", 'green');			
 		} else {
-			$("#3")[0].style.color = 'magenta';
+			TextColorChange("#3", 'magenta');	
 		}
 	});		
 
@@ -124,7 +128,8 @@ $(document).ready(function() {
 	<!-- 4C ::
 	<!-- functioning button:
 	$("button#hw4C").on("click", getHobbies);
-	
+	$("button#hw4C").on("click", getHob);
+
 	<!-- create object w/json
 	
 	<!-- iterate over obj and assign to created tags
