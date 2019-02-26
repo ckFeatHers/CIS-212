@@ -73,22 +73,32 @@ much as possible from others around me and maybe someday I will be able to be of
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="main.js"></script>
 <script>
-$(document).ready(function() {
 
+function TextColorChange() {	
+alert("use element?");
+}
+</script>
+<script>
+$(document).ready(function() {	
+	
+	
 <!-- Assignment #4A change color of SWIC in individual span tag using click handler and jquery 
-	$("span").click(function() {
-	<!--		
-		let spanNum = $(this).attr("id");
-	<!--
-		if (spanNum == "1") {
+	
+	
+	$("span").click(function(){
+	
+	let e = $(this).attr("id");	
+	
+	if (e == "1") {
 			$("#1")[0].style.color = 'red';
-		} else if (spanNum == "2") {
+		} else if (e == "2") {
 			$("#2")[0].style.color = 'green';			
 		} else {
 			$("#3")[0].style.color = 'magenta';
-		}		
+		}
+	});		
+
 	<!-- /assign 4A	
-	});
 	
 <!-- Assignment #4B add button id nameToggle call function ToggleName	let ToggleName = 
 	<!-- NEED THIS to access button
